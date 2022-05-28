@@ -1,0 +1,7 @@
+{
+    "port": "COM10",
+    "board": "arduino:avr:mega",
+    "programmer": "arduino:cmsis-dap",
+    "sketch": "Tranceiver_rx_node2_v5.ino",
+    "configuration": "cpu=atmega2560"
+}
