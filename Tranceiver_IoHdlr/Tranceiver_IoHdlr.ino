@@ -14,8 +14,17 @@
 
 #define int2arr(n,m) ((n%m)/(m/10)+'0')
 
-//RF24 radio(7, 8); // CE, CSN, Nano 33 ble
-RF24 radio(48, 49); // CE, CSN, MEGA
+/*---------- Mega2560 CE/CSN ----------*/
+#if define(_AVR__ATmega2560)
+#define CE 48   //Mega2560
+#define CSN 49  //Mega2560
+#else
+#define CE 7    //other hw
+#define CSN 8   //other hw
+#endif
+/*-------------------------------------*/
+
+RF24 radio(CE, CSN); // CE, CSN
 
 const byte address1[6] = "00001";
 const byte address2[6] = "00002";
